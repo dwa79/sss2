@@ -1,0 +1,14 @@
+<h1>Student List</h1>
+
+<ul>
+<% @students.each do |s| %>
+    <li>
+        <%= s.name %>
+        <%= link_to 'Show', :controller => 'students', :action => 'show', :id => s %>
+        <%= link_to 'Edit', :controller => 'students', :action => 'edit', :id => s %>
+        <%= link_to 'Delete', :controller => 'students', :action => 'destroy', :id => s %>
+    </li>
+<% end %>
+</ul>
+
+<%= link_to 'New Student', :controller => 'students', :action => 'new' %>
