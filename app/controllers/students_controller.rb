@@ -5,6 +5,15 @@ class StudentsController < ApplicationController
         @students = Student.all
     end
     
+    #get /students/show/:id
+    def show
+        @student=Student.find(params[:id])
+    end
+    
+    #get /students/edit/:id
+    def edit
+        @student = Student.find(params[:id])
+    end
     #get /students/new
     def new
         @student = Student.new
@@ -19,8 +28,17 @@ class StudentsController < ApplicationController
         redirect_to :action => :index  #tell browser http code: 3003
     end
     
+    #post students/update/:id
+    def update
+        @student = Student.find(params[:id])
+        
+        @student.update(student.params)
+        
+        redirect_to :action => 'show', :id => @student
+    end
+    
     private
-    def event_params
-        params.require(:event).permit(:name, :weight, :height, :color, :gpa, :description, :sex)
+    def student_params
+        params.require(:student).permit(:name, :weight, :height, :color, :gpa, :description, :sex)
     end
 end

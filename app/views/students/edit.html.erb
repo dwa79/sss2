@@ -1,0 +1,32 @@
+<%= form_for @student, :url => { :controller => 'students', :action => 'update' } do |f| %>
+  <div>
+    <%= f.label :name, "Name:" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :weight, "Weight:" %>
+    <%= f.text_area :weight %>
+  </div>
+  <div>
+    <%= f.label :height, "Height:" %>
+    <%= f.text_area :height %>
+  </div>
+  <div>
+    <%= f.label :color, "Color:" %>
+    <%= f.text_area :color %>
+  </div>    
+  <div>    
+    <%= f.label :gpa, "GPA:" %>
+    <%= f.text_area :gpa %>
+  </div>    
+  <div>    
+    <%= f.label :description, "Description" %>
+    <%= f.text_area :description %>
+  </div>    
+  <div>    
+    <%= f.label :sex, "Sex" %>
+    <%= f.text_area :sex %>
+  </div>    
+
+    <%= f.submit "Create" %>
+<% end %>
