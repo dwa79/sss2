@@ -1,14 +1,45 @@
 <h1>Student List</h1>
-
-<ul>
+<%= javascript_include_tag :all %>
+<div>
+    <button type="button" class="button1" onclick="col()">Pick your color</button>
+    <button type="button" class="button1" onclick="about()">About Developer</button>
+</div>
+<table style="border: 1px solid black;border-collapse: collapse;width: 98.5%;">
 <% @students.each do |s| %>
-    <li>
-        <%= s.name %>
-        <%= link_to 'Show', :controller => 'students', :action => 'show', :id => s %>
-        <%= link_to 'Edit', :controller => 'students', :action => 'edit', :id => s %>
-        <%= link_to 'Delete', :controller => 'students', :action => 'destroy', :id => s %>
-    </li>
+    <tr>
+        <td style="font-size:20px;color:<%= s.color %>"><%= s.name %></td>
+        <td><%= link_to 'Information', :controller => 'students', :action => 'show', :id => s %></td>
+        <td><%= link_to 'Edit', :controller => 'students', :action => 'edit', :id => s %></td>
+        <td><%= link_to 'Delete', :controller => 'students', :action => 'destroy', :id => s %></td>
+    </tr>
+   
 <% end %>
-</ul>
+</table>
+ <%= link_to 'New Student', :controller => 'students', :action => 'new' %>
 
-<%= link_to 'New Student', :controller => 'students', :action => 'new' %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div id="rec">
+    <% @students.each do |p| %>
+    
+    <div class="rec" style="width:<%=p.weight %>px;height:<%= p.height %>px;display:inline-block;border:1px solid #000;">
+        
+        
+          <p style="color:<%= p.color %>;text-align:center"><%= p.name %></p>
+          <p style="text-align:center"><%= p.gpa %></p>
+     
+        
+    </div>
+    <% end %>
+</div>
+
+
+
+

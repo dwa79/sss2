@@ -1,0 +1,25 @@
+<h2><%= @student.name %>----Personal Information</h2>
+<table style="border: 1px solid black;border-collapse: collapse;width: 98.5%;">
+			<tr>
+				<th>Name</th>
+				<th>Weight</th>
+				<th>Height</th>
+				<th>Color</th>
+				<th>Gpa</th>
+				<th>Sex</th>
+				<th>Description</th>
+			<tr>
+			<tr>
+			    <td><%= @student.name %></td>
+				<td><%= @student.weight %></td>
+				<td><%= @student.height %></td>
+				<td><%= @student.color %></td>
+				<td><%= @student.gpa %></td>
+				<td><%= @student.sex %></td>
+			    <td><%= simple_format(@student.description) %></td>
+				
+			</tr>
+</table>
+
+
+<P><%= link_to 'Back to home', :controller => 'students', :action => 'index' %></P>

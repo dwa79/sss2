@@ -1,32 +1,39 @@
-<%= form_for @student, :url => { :controller => 'students', :action => 'update' } do |f| %>
-  <div>
+<%= form_for @student, :url => { :controller => 'students', :action => 'update', :id=>@student } do |f| %>
+  <div class="edl">
     <%= f.label :name, "Name:" %>
     <%= f.text_field :name %>
   </div>
-  <div>
+  <br>
+  <div class="edl">
     <%= f.label :weight, "Weight:" %>
     <%= f.text_area :weight %>
   </div>
-  <div>
+  <br>
+  <div class="edl">
     <%= f.label :height, "Height:" %>
     <%= f.text_area :height %>
   </div>
-  <div>
+  <br>
+  <div class="edl">
     <%= f.label :color, "Color:" %>
     <%= f.text_area :color %>
-  </div>    
-  <div>    
+  </div>
+  <br>
+  <div class="edl">    
     <%= f.label :gpa, "GPA:" %>
     <%= f.text_area :gpa %>
-  </div>    
-  <div>    
-    <%= f.label :description, "Description" %>
+  </div>  
+  <br>
+  <div class="edl">    
+    <%= f.label :description, "Description:" %>
     <%= f.text_area :description %>
-  </div>    
-  <div>    
-    <%= f.label :sex, "Sex" %>
+  </div> 
+  <br>
+  <div class="edl">    
+    <%= f.label :sex, "Sex:" %>
     <%= f.text_area :sex %>
-  </div>    
+  </div> 
+  <br>
 
-    <%= f.submit "Create" %>
+    <%= f.submit "Update" %>
 <% end %>

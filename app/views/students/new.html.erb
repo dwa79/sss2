@@ -1,29 +1,30 @@
+<% provide(:title, "pig") %>
 <%= form_for @student, :url => { :controller => 'students', :action => 'create' } do |f| %>
-  <div>
+  <div class="newp">
     <%= f.label :name, "Name:" %>
     <%= f.text_field :name %>
   </div>
-  <div>
+  <div class="newp">
     <%= f.label :weight, "Weight:" %>
     <%= f.text_area :weight %>
   </div>
-  <div>
+  <div class="newp">
     <%= f.label :height, "Height:" %>
     <%= f.text_area :height %>
   </div>
-  <div>
+  <div class="newp">
     <%= f.label :color, "Color:" %>
     <%= f.text_area :color %>
   </div>    
-  <div>    
+  <div class="newp">    
     <%= f.label :gpa, "GPA:" %>
     <%= f.text_area :gpa %>
   </div>    
-  <div>    
+  <div class="newp">    
     <%= f.label :description, "Description" %>
     <%= f.text_area :description %>
   </div>    
-  <div>    
+  <div class="newp">    
     <%= f.label :sex, "Sex" %>
     <%= f.text_area :sex %>
   </div>    

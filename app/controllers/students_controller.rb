@@ -7,12 +7,16 @@ class StudentsController < ApplicationController
     
     #get /students/show/:id
     def show
-        @student=Student.find(params[:id])
+        @student = Student.find(params[:id])
+        
+        @page_title = @student.name
     end
     
     #get /students/edit/:id
     def edit
         @student = Student.find(params[:id])
+        
+        @page_title = @student.name
     end
     #get /students/new
     def new
@@ -32,9 +36,19 @@ class StudentsController < ApplicationController
     def update
         @student = Student.find(params[:id])
         
-        @student.update(student.params)
+        @student.update(student_params)
         
-        redirect_to :action => 'show', :id => @student
+        redirect_to :action => :show, :id => @student
+    end
+    
+    #get /students/destroy/:id
+    def destroy
+        @student = Student.find(params[:id])
+        
+        @student.destroy
+        
+        redirect_to :action => :index
+        
     end
     
     private
